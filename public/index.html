@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,11 +24,211 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+   -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&display=swap" rel="stylesheet">
+  <title>React App</title>
+  <style>
+    * {
+      font-family: "M PLUS Rounded 1c", sans-serif !important;
+      color: white !important;
+    }
+
+    #btnlogin {
+      border-radius: 5px;
+      border: none;
+      width: 120px;
+      font-size: 12px;
+      font-weight: bolder;
+    }
+
+    #overlay {
+      margin-top: -10%;
+    }
+
+    #mid-div {
+      margin-top: 15%;
+      font-weight: bolder;
+    }
+
+    #login-div {
+      width: 350px;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      #login-div {
+        position: absolute;
+        width: 100%;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      #header {
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 20px !important;
+        justify-content: space-between !important;
+      }
+
+      .navs {
+        display: none !important;
+      }
+
+      #btncloselogin {
+        margin-right: 15px !important;
+      }
+
+      #btnlogin {
+        display: none !important;
+      }
+
+      .logins {
+        width: 85% !important;
+        padding: 15px !important;
+        margin-top: 20px !important;
+        font-family: "'M PLUS Rounded 1c', sans-serif";
+      }
+
+      .logins-t {
+        font-size: 13px !important;
+      }
+
+      .login-logo {
+        width: 60px !important;
+        height: 60px !important;
+        margin-top: 45px !important;
+      }
+
+      .login-text {
+        margin-top: 35px !important;
+        font-size: 20px !important;
+      }
+
+      #menu {
+        display: block !important;
+        height: 30px !important;
+        width: 30px !important;
+      }
+
+      #mid-div {
+        margin-top: 45% !important;
+      }
+
+      #createb {
+        width: 80% !important;
+        padding: 15px !important;
+        border-radius: 30px;
+        background-color: white !important;
+        color: black !important;
+        margin-top: 20px;
+        background-image: none !important;
+        font-size: 14px !important;
+        cursor: pointer;
+      }
+
+      #loginb {
+        width: 80% !important;
+        display: block !important;
+        padding: 15px !important;
+        border: 2px solid white;
+        border-radius: 30px;
+        background-color: transparent !important;
+        color: white !important;
+        margin-top: 20px;
+        cursor: pointer;
+
+      }
+    }
+  </style>
+</head>
+
+<body
+  style="background-image: url('landing2.jpg');width:100%;height:100vh;background-repeat:no-repeat;background-position:center;background-size:cover;padding:0px !important;margin:0px !important;">
+
+  <div id="overlay" style="width:100%;height:100vh;background-color:rgba(0,0,0,0.6);margin:0px;padding:0px;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <header id="header" style="justify-content: space-around;align-items:center" class=" pt-4 d-flex">
+      <span id="logospan" class="d-flex align-items-center">
+        <img src="./Resources/svgs/SasaAfyaLogoWhite.svg" style="width:50px;height:50px;" />
+        <span style="font-weight: bold;color:white;font-size:25px;">SasaAfya</span>
+      </span>
+      <span class="d-flex  align-items-center navs">
+        <span
+          style="font-weight:lighter;font-size:13px;margin-right:15px;font-family: 'M PLUS Rounded 1c', sans-serif;letter-spacing:2px;">Product</span>
+        <span
+          style="font-weight:lighter;font-size:13px;font-family: 'M PLUS Rounded 1c', sans-serif;letter-spacing:2px;">Lifestyle</span>
+      </span>
+      <button style="cursor:pointer;" id="btnlogin" class="text-primary btn-sm p-2">LOG IN</button>
+      <img style="display: none;" id="menu" src="./Resources/svgs/NavIcon.svg" style="height:30px;width:30px;" />
+
+    </header>
+    <center>
+      <div id="mid-div">
+        <h1 style="font-family: 'M PLUS Rounded 1c', sans-serif;letter-spacing:2px;">SELFCARE MADE SIMPLE</h1>
+        
+
+          <div id="root">
+
+          </div>
+        <button id="loginb" style="display:none;">
+          LOGIN</button>
+      </div>
+    </center>
+    <div id="bigholder" style="position: absolute;top:0;left:0;right:0;bottom:0;display:none;padding:0%;">
+      <div id="login-holder" class="d-flex"
+        style="position: absolute;justify-content:center;align-items:center;top:0px;left:0px;right:0px;bottom:0px;">
+        <div id="login-div" class="rounded" style="">
+          <div id="btncloselogin" class="ml-auto d-flex align-items-center justify-content-center"
+            style="width:30px;height:30px;color: gray !important;border:1px solid gray !important;border-radius:15px;cursor:pointer;">
+            &times;</div>
+          <img class="mx-auto mt-2 login-logo" src="./Resources/svgs/SasaAfyaLogoDark.svg"
+            style="width:40px;height:40px;" />
+          <span class="text-primary mx-auto mt-3 d-flex login-text">
+            LOGIN
+          </span>
+          <span class="mx-auto mt-3 d-flex align-items-center p-2 w-75 logins"
+            style="border-radius:15px;background-color:#e9e9e9;">
+            <img src="./Resources/svgs/twitter.svg" class="ml-3" style="width: 20px;" />
+            <span class="ml-3 logins-t" style="font-size:10px;color:#737373 !important;">LOGIN WITH TWITTER</span>
+          </span>
+          <span class="mx-auto mt-3 d-flex align-items-center p-2 w-75 logins"
+            style="border-radius:15px;background-color:#e9e9e9;">
+            <img src="./Resources/svgs/facebook.svg" class="ml-3" style="width: 20px;" />
+            <span class="ml-3 logins-t" style="font-size:10px;color:#737373 !important;">LOGIN WITH FACEBOOK</span>
+          </span>
+          <span class="mx-auto mt-3 d-flex align-items-center p-2 w-75 logins"
+            style="border-radius:15px;background-color:#e9e9e9;">
+            <img src="./Resources/svgs/speech-bubble.svg" class="ml-3" style="width: 20px;" />
+            <span class="ml-3 logins-t" style="font-size:10px;color:#737373 !important;">LOGIN WITH PHONE</span>
+          </span>
+
+          <span class="mt-3 logins-t mb-2 w-75 mx-auto logins"
+            style="text-align: center;color: gray !important;font-size:8px;">
+            By clicking login, you agree to our <span
+              style="text-decoration: underline;color:gray !important;">terms</span>. Learn how we process your data in
+            our <span style="text-decoration: underline;color:gray !important;">privacy policy</span> and <span
+              style="text-decoration: underline;color:gray !important;">cookie policy</span>.
+          </span>
+        </div>
+      </div>
+    </div>
+
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +239,33 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+      $(document).ready(function () {
+        $("#btnlogin").click(function () {
+          $("#bigholder").show();
+
+        });
+        $("#loginb").click(function () {
+          $("#bigholder").show();
+
+        });
+        $("#btncloselogin").click(function () {
+          $("#bigholder").hide();
+        });
+      })
+    </script>
+</body>
+
 </html>
